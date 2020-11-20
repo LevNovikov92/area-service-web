@@ -27,10 +27,7 @@ export class SchoolService {
 
 export class School {
 
-  title: string
-
-  constructor(title: string) {
-    this.title = title
+  constructor(public title: string) {
   }
 
 }

@@ -9,10 +9,9 @@ import {AreaData} from "../../services/area.service";
 export class AreaListComponent implements OnInit {
 
   @Input() data: AreaData[] = []
-  tableHeaders = ["title"]
+  tableHeaders = ["title", "safetyScore", "landmarks"]
 
-  constructor(
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
