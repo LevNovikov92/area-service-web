@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {School} from "../schools-list/schools-list.component";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -14,12 +13,32 @@ export class SchoolService {
   }
 
   getSchools(): Observable<School[]> {
-    console.log("School service called")
-
-    // const headers = new HttpHeaders();
-    // headers.set("Access-Control-Allow-Origin", "*")
     return this.http.get<School[]>("http://localhost:8080/school", {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     })
   }
+
+  getSchoolTypes(): Observable<SchoolType[]> {
+    return this.http.get<SchoolType[]>("http://localhost:8080/schoolType", {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    })
+  }
+}
+
+export class School {
+
+  title: string
+
+  constructor(title: string) {
+    this.title = title
+  }
+
+}
+
+export class SchoolType {
+
+  constructor(
+    public id: number,
+    public title: string
+  ) {}
 }

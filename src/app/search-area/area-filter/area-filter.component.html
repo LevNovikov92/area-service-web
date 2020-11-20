@@ -1,0 +1,25 @@
+<div>
+  <mat-form-field appearance="standard">
+    <mat-label>Standard form field</mat-label>
+    <input matInput placeholder="Placeholder" [(ngModel)]="filter.landmarkKey">
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="standard" [(ngModel)]="filter.schoolType">
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let type of schoolTypes" [value]="type.id">{{type.title}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br>
+  <mat-slider
+    [(ngModel)]="filter.minSafety"
+    thumbLabel
+    step="0.1"
+    min="0.0"
+    max="1.0">
+  </mat-slider>
+  <br>
+  <button mat-raised-button color="primary" (click)="onClick()">Search</button>
+
+</div>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {SchoolService} from "../services/school.service";
+import {School, SchoolService} from "../services/school.service";
 
 @Component({
   selector: 'app-schools-list',
@@ -8,6 +8,7 @@ import {SchoolService} from "../services/school.service";
 })
 export class SchoolsListComponent implements OnInit {
 
+  tableHeaders = ["title"]
   schools: School[] = []
 
   constructor(private schoolService: SchoolService) {}
@@ -24,14 +25,4 @@ export class SchoolsListComponent implements OnInit {
         this.schools = schools
       })
   }
-}
-
-export class School {
-
-  title: string
-
-  constructor(title: string) {
-    this.title = title
-  }
-
 }
