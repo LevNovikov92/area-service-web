@@ -4,15 +4,15 @@
     <input matInput placeholder="Park, pond, etc..." [(ngModel)]="filter.landmarkKey">
   </mat-form-field>
   <br>
-  <mat-form-field appearance="standard" [(ngModel)]="filter.schoolType" class="col-sm-3">
+  <mat-form-field appearance="standard" class="col-sm-3">
     <mat-label>Select school type</mat-label>
-    <mat-select>
+    <mat-select [(ngModel)]="filter.schoolType">
       <mat-option *ngFor="let type of schoolTypes" [value]="type.id">{{type.title}}</mat-option>
     </mat-select>
   </mat-form-field>
   <br>
   <div class="col-sm-5">
-    <span class="md-body-1">Minimal safety index</span>
+    <mat-label class="md-body-1">Minimal safety index</mat-label>
     <mat-slider
       [(ngModel)]="filter.minSafety"
       thumbLabel

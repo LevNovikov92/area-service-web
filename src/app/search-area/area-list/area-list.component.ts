@@ -9,7 +9,7 @@ import {AreaData} from "../../services/area.service";
 export class AreaListComponent implements OnInit {
 
   @Input() data: AreaData[] = []
-  tableHeaders = ["title", "safetyScore", "landmarks"]
+  tableHeaders = ["title", "safetyScore", "landmarks", "schools"]
 
   constructor() { }
 

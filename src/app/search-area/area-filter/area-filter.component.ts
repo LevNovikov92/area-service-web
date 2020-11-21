@@ -21,7 +21,9 @@ export class AreaFilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.schoolService.getSchoolTypes()
-      .subscribe(types => this.schoolTypes = types)
+      .subscribe(types => {
+        this.schoolTypes = [new SchoolType(-1, "Any"), ...types]
+      })
   }
 
   onClick() {

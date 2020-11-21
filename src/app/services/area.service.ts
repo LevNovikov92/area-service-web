@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {School} from "./school.service";
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,8 @@ export class AreaData {
     public id: number,
     public title: String,
     public safetyScore: number,
-    public landmarks: Landmark[]
+    public landmarks: Landmark[],
+    public schools: School[]
   ) {
   }
 }

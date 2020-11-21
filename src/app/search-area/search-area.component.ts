@@ -16,8 +16,19 @@ export class SearchAreaComponent implements OnInit {
   }
 
   onSearch(filter: AreaFilter) {
+    SearchAreaComponent.formatFilter(filter)
     this.areaService.searchArea(filter)
       .subscribe(areas => this.data = areas)
+  }
+
+  private static formatFilter(filter: AreaFilter) {
+    if (filter.landmarkKey == "") {
+      filter.landmarkKey = null
+    }
+
+    if (filter.schoolType != null && filter.schoolType < 0) {
+      filter.schoolType = null
+    }
   }
 
 }
